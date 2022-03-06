@@ -1,5 +1,5 @@
 Prerequisites:
-    1. Have Python3 with Tkinter
+    1. Have Python3 (I used Python 3.8) with Tkinter
     2. Clone project
     3. python -m pip install -U pip
     4. python -m pip install -U matplotlib

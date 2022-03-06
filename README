@@ -1,3 +1,5 @@
+This was a simple app made to check the paramters in your fish tank by comparing the colors of the aquarium test kit vials with the color chart.
+
 Simply run the Python script and then select an image. After selecting an image, choose your base color by left-clicking anywhere in your chosen photo. 
 Next, you will be able to left-click any other part of the photo to compare the base color and that color. 
 Each comparison will provide you with the % of difference and similarity between the two colors.

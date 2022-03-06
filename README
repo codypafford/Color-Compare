@@ -1,8 +1,11 @@
 Prerequisites:
     1. Have Python3 with Tkinter
     2. Clone project
-    3. Run 'pip install -r /path/to/requirements.txt' to install dependencies
-    4. run the script using Python3
+    3. python -m pip install -U pip
+    4. python -m pip install -U matplotlib
+    4. Run 'pip install -r /path/to/requirements.txt' to install dependencies
+        1. If this does not work, you may need to just 'pip install' the imported dependencies manually
+    5. run the script using Python3
         1. ex: 'python3 color_comparer.py'
 
 This was a simple app made to check the paramters in your fish tank by comparing the colors of the aquarium test kit vials with the color chart.

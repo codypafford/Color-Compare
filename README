@@ -1,8 +1,9 @@
 Prerequisites:
     1. Have Python3 with Tkinter
     2. Clone project
-    3. Run pip install -r /path/to/requirements.txt to install dependencies
+    3. Run 'pip install -r /path/to/requirements.txt' to install dependencies
     4. run the script using Python3
+        1. ex: 'python3 color_comparer.py'
 
 This was a simple app made to check the paramters in your fish tank by comparing the colors of the aquarium test kit vials with the color chart.
 

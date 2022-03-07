@@ -66,17 +66,22 @@ def on_click(event):
         if image_selected:
             label.configure(text="Difference: " + str(round(color_difference, 2)) + "%, Similarity: " + str(round(color_similarity, 2)) + "%")
 
+imgvar = None
 def open_image():
-    global image_selected
+    global imgvar
+    if imgvar is not None:
+        imgvar.destroy()
     path=filedialog.askopenfilename(filetypes=[("Image File",'.jpg .png .jpeg')])
     im = Image.open(path)
     im = im.resize((400, 400), Image.ANTIALIAS)
     tkimage = ImageTk.PhotoImage(im)
-    myvar=Label(root,image = tkimage)
-    myvar.image = tkimage
-    myvar.pack()
+    imgvar=Label(root,image = tkimage)
+    imgvar.image = tkimage
+    imgvar.pack()
+    imgvar.lift()
     label.configure(text="you selected an image")
-    image_selected = True
+    print("you selected an image")
+    print(str(tkimage))
 
 def selectBaseColor():
     global select_base_color_mode

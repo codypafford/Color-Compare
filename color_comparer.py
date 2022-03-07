@@ -15,6 +15,7 @@ base_color_green = 0
 base_color_blue = 0
 image_selected = False
 
+
 def getDifferenceBetweenColors(r2, g2, b2):
     # hardcode base value
     r1 = base_color_red
@@ -57,7 +58,9 @@ def on_click(event):
                 base_color_blue = blue
                 print("Set the base color value to -> " + " Red: " + str(base_color_red) + " Green: " + str(base_color_green) + " Blue: " + str(base_color_blue))
                 select_base_color_mode = not select_base_color_mode
-                label.configure(text="Now select the color to compare it to")
+                label.configure(text="Now select the color to compare it to...")
+                colorval = "#%02x%02x%02x" % (base_color_red, base_color_green, base_color_blue)
+                canvas.itemconfig(base_color_rect, fill=colorval)
     else:
         color_difference, color_similarity = getDifferenceBetweenColors(red,green,blue)
         if image_selected:
@@ -65,7 +68,7 @@ def on_click(event):
 
 def open_image():
     global image_selected
-    path=filedialog.askopenfilename(filetypes=[("Image File",'.jpg')])
+    path=filedialog.askopenfilename(filetypes=[("Image File",'.jpg .png .jpeg')])
     im = Image.open(path)
     im = im.resize((400, 400), Image.ANTIALIAS)
     tkimage = ImageTk.PhotoImage(im)
@@ -89,6 +92,12 @@ picture_chooser_btn = tk.Button(master=root, text='Select Image', command= lambd
 picture_chooser_btn.pack()
 base_color_picker_btn = tk.Button(master=root, text='Choose Base Color', command= lambda: selectBaseColor())
 base_color_picker_btn.pack()
+canvas = Canvas(root, width=80, height=50, bg="#F8F9F9")
+
+base_color_rect = canvas.create_rectangle(0, 0, 85, 85, fill="red")
+canvas_label = canvas.create_text((42, 20), text="Base Color")
+
+canvas.pack()
 label = tk.Label(root, anchor="w")
 label.pack(side="top", fill="x") 
 root.bind('<ButtonPress-1>', on_click)
